@@ -6,19 +6,26 @@ import {
   FaPhone,
   FaEnvelope,
   FaLocationDot,
+  FaTrash,
 } from "react-icons/fa6";
-import profileImg from "/ujjwal.jpg";
-function ProfileCard({ profile }) {
+
+import { Link } from "react-router-dom";
+
+function ProfileCard({ profile, onDelete }) {
   return (
     <div className="profile-wrapper">
       <div className="profile-card">
-        <img src={profile.image} alt={profile.name} className="profile-image" />
+        <button className="delete-btn" onClick={() => onDelete(profile._id)}>
+          <FaTrash />
+        </button>
+
+        <img src={profile.photo} alt={profile.name} className="profile-image" />
 
         <h1>{profile.name}</h1>
 
         <h3>{profile.title}</h3>
 
-        <p className="about">{profile.about}</p>
+        <p className="about">{profile.description}</p>
 
         <div className="info-section">
           <div className="info-item">
@@ -55,12 +62,14 @@ function ProfileCard({ profile }) {
           <a href={`tel:${profile.phone}`}>
             <button>Call</button>
           </a>
+
           <a href={`mailto:${profile.email}`}>
             <button>Email</button>
           </a>
-          <a href={profile.linkedin} target="_blank">
-            <button>Open Profile</button>
-          </a>
+
+          <Link to={`/edit-profile/${profile._id}`}>
+            <button>Edit Profile</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -35,6 +35,49 @@ body {
 
   margin: 0 auto;
 }
+.delete-btn {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255, 0, 0, 0.15);
+
+  backdrop-filter: blur(8px);
+
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  transform: translateY(-10px);
+
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover .delete-btn {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+
+  transform: scale(1.1);
+}
 .profile-card {
   position: relative;
 
@@ -222,4 +265,110 @@ body {
   .action-buttons {
     flex-direction: column;
   }
+}
+
+.edit-container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+
+  background: #f4f7fb;
+}
+
+.edit-form {
+  width: 100%;
+  max-width: 700px;
+
+  background: white;
+
+  padding: 2rem;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.edit-form h1 {
+  margin-bottom: 1.8rem;
+
+  font-size: 2rem;
+  font-weight: 700;
+
+  color: #1f2937;
+
+  text-align: center;
+}
+
+.edit-form input,
+.edit-form textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  margin-bottom: 1rem;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+
+  outline: none;
+
+  transition: all 0.25s ease;
+}
+
+.edit-form textarea {
+  min-height: 120px;
+
+  resize: vertical;
+}
+
+.edit-form input:focus,
+.edit-form textarea:focus {
+  border-color: #4f46e5;
+
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+.edit-form button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #4f46e5;
+
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.edit-form button:hover {
+  background: #4338ca;
+
+  transform: translateY(-2px);
+}
+
+.edit-form button:active {
+  transform: translateY(0);
+}
+.form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1rem;
 }
