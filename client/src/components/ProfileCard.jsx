@@ -9,17 +9,6 @@ import {
 } from "react-icons/fa6";
 import profileImg from "/ujjwal.jpg";
 function ProfileCard({ profile }) {
-  // const profile = {
-  //   image: profileImg,
-  //   name: "John Doe",
-  //   title: "Frontend Developer",
-  //   about:
-  //     "Passionate React developer focused on creating beautiful, responsive, and user-friendly web applications.",
-  //   phone: "+91 9876543210",
-  //   email: "john@example.com",
-  //   location: "New Delhi, India",
-  // };
-
   return (
     <div className="profile-wrapper">
       <div className="profile-card">
@@ -49,23 +38,29 @@ function ProfileCard({ profile }) {
         </div>
 
         <div className="social-links">
-          <a href="#">
+          <a href={profile.linkedin}>
             <FaLinkedin />
           </a>
 
-          <a href="#">
+          <a href={profile.instagram}>
             <FaInstagram />
           </a>
 
-          <a href="#">
+          <a href={profile.github}>
             <FaGithub />
           </a>
         </div>
 
         <div className="action-buttons">
-          <button>Call</button>
-          <button>Email</button>
-          <button>Profile</button>
+          <a href={`tel:${profile.phone}`}>
+            <button>Call</button>
+          </a>
+          <a href={`mailto:${profile.email}`}>
+            <button>Email</button>
+          </a>
+          <a href={profile.linkedin} target="_blank">
+            <button>Open Profile</button>
+          </a>
         </div>
       </div>
     </div>
