@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import ProfilePage from "./pages/ProfilePage.jsx";
+import EditProfilePage from "./pages/EditProfilePage.jsx";
 function App() {
   return (
     <BrowserRouter>
