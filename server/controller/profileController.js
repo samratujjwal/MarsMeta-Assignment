@@ -27,17 +27,6 @@ export const getProfile = async (req, res) => {
     });
   }
 };
-// export const createProfile = async (req, res) => {
-//   try {
-//     const profile = await Profile.create(req.body);
-
-//     res.status(201).json(profile);
-//   } catch (error) {
-//     res.status(500).json({
-//       message: error.message,
-//     });
-//   }
-// };
 
 export const createProfile = async (req, res) => {
   try {
