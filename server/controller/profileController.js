@@ -1,4 +1,4 @@
-import Profile from "../models/Profile.js";
+import Profile from "../models/profile.js";
 export const getProfiles = async (req, res) => {
   try {
     const profiles = await Profile.find();
