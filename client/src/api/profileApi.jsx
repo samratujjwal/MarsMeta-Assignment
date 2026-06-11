@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api/profiles",
+  baseURL: "https://marsmeta-assignment.onrender.com/api/profiles",
 });
 
 export const getProfiles = () => API.get("/");
